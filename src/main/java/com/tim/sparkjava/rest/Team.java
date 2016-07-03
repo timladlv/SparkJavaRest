@@ -8,17 +8,15 @@ import java.util.Objects;
 public class Team {
     private final String teamName;
     private final String managerName;
-    private final int teamId;
 
-    public Team(final int teamId, final String teamName, final String managerName) {
-        this.teamId = teamId;
+    public Team(final String teamName, final String managerName) {
         this.teamName = teamName;
         this.managerName = managerName;
     }
 
     @Override
     public String toString() {
-        return String.format("[id: %d] [teamName: %s] [managerName: %s]", teamId, teamName, managerName);
+        return String.format("[teamName: %s] [managerName: %s]", teamName, managerName);
     }
 
     @Override
@@ -33,8 +31,7 @@ public class Team {
             return false;
         }
         final Team other = (Team) obj;
-        return Objects.equals(this.teamId, other.teamId)
-                && Objects.equals(this.teamName, other.teamName)
+        return Objects.equals(this.teamName, other.teamName)
                 && Objects.equals(this.managerName, other.managerName);
     }
 

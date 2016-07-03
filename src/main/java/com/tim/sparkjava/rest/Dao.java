@@ -8,4 +8,5 @@ import java.util.List;
 public interface Dao<T> {
     T get(int i);
     List<T> get();
+    int put(T item);
 }

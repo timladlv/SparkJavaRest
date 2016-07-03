@@ -27,7 +27,7 @@ public class TeamServiceTest {
 
     @Test
     public void testGet() {
-        final Team expectedTeam = new Team(1, "teamName", "managerName");
+        final Team expectedTeam = new Team("teamName", "managerName");
         when(dao.get(1)).thenReturn(expectedTeam);
 
         final Team team = uut.getTeam(1);
@@ -37,7 +37,7 @@ public class TeamServiceTest {
 
     @Test
     public void testGetAll() {
-        final List<Team> expectedTeams = Arrays.asList(new Team(1, "teamName", "managerName"), new Team(2, "teamName2", "managerName2"));
+        final List<Team> expectedTeams = Arrays.asList(new Team("teamName", "managerName"), new Team("teamName2", "managerName2"));
         when(dao.get()).thenReturn(expectedTeams);
 
         final List<Team> teams = uut.getTeams();

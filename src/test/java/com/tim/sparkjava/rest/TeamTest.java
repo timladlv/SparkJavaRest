@@ -11,7 +11,7 @@ public class TeamTest {
 
     @Test
     public void testInstantiation() {
-        Team team = new Team(1, "teamName", "managerName");
+        Team team = new Team("teamName", "managerName");
         assertNotNull(team);
     }
 }
